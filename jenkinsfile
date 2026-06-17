@@ -1,0 +1,10 @@
+pipeline{
+agent any{
+stages('build'){
+bat "mvn build"
+}
+}
+stages("deploy"){
+echo "deployed"
+}
+}
