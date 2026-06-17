@@ -1,0 +1,25 @@
+pipeline{
+agent any
+{
+stage("build"){
+steps{
+bat "mvn clean compile"
+}
+}
+stage("test"){
+steps{
+bat "mvn test"
+}
+}
+stage("package"){
+steps{
+bat "mvn package"
+}
+}
+stage("Deploy"){
+steps{
+echo "Application deployed sucessfully"
+}
+}
+}
+}
